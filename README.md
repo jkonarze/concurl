@@ -1,5 +1,4 @@
-![GO](https://github.com/jkonarze/concurl/workflows/Go/badge.svg)
-
+![CI](https://github.com/jkonarze/concurl/workflows/CI/badge.svg)
 [![codecov](https://codecov.io/gh/jkonarze/concurl/branch/master/graph/badge.svg)](https://codecov.io/gh/jkonarze/concurl)
 
 ## Concurl
