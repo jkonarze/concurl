@@ -49,7 +49,8 @@ func (s Svc) call(wg *sync.WaitGroup, i int, method, payload string) {
 		resp, err = http.Post(s.url, content, payloadBuff)
 	case http.MethodGet:
 		resp, err = http.Get(s.url)
-	case http.MethodDelete:
+	case http.MethodHead:
+		resp, err = http.Head(s.url)
 	}
 
 	if err != nil {
@@ -65,7 +66,6 @@ func (s Svc) call(wg *sync.WaitGroup, i int, method, payload string) {
 		}
 
 		respStr := buf.String()
-
 		result := fmt.Sprintf("call: %d status: %d body: %s", i+1, resp.StatusCode, respStr)
 		fmt.Println(result)
 	}
