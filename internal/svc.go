@@ -3,6 +3,7 @@ package internal
 import (
 	"bytes"
 	"fmt"
+	"github.com/gammazero/workerpool"
 	"net/http"
 	"strings"
 	"sync"
@@ -30,13 +31,17 @@ func NewSvc(url string, num int, method string, payload string) Svc {
 
 func (s Svc) Init() {
 	var wg sync.WaitGroup
+	wp := workerpool.New(20)
 
 	for i := 0; i < s.concurrent; i++ {
 		wg.Add(1)
-		go s.call(&wg, i, s.method, s.payload)
+		wp.Submit(func (){
+			s.call(&wg, i, s.method, s.payload)
+		})
 	}
 
 	wg.Wait()
+	wp.Stop()
 }
 
 func (s Svc) call(wg *sync.WaitGroup, i int, method, payload string) {
