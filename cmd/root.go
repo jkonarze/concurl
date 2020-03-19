@@ -10,12 +10,14 @@ var (
 	times int
 	payload string
 	method string
+	headers []string
 )
 
 func Execute() {
 	cmdCall.PersistentFlags().IntVarP(&times, "times", "t", 1, "number of concurrent calls")
 	cmdCall.PersistentFlags().StringVarP(&payload, "payload", "p", "", "payload for POST requests")
 	cmdCall.PersistentFlags().StringVarP(&method, "method", "m", "post", "define the http method")
+	cmdCall.PersistentFlags().StringSliceVarP(&headers, "headers", "H", []string{}, "headers for a request")
 
 	var rootCmd = &cobra.Command{Use: "concurl"}
 	rootCmd.AddCommand(cmdCall)

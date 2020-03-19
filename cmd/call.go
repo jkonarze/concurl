@@ -11,7 +11,7 @@ var cmdCall = &cobra.Command{
 	Long: `An easy way to call a given url by default once`,
 	Args: cobra.MinimumNArgs(1),
 	Run: func(cmd *cobra.Command, args []string) {
-		svc := internal.NewSvc(args[0], times, method, payload)
+		svc := internal.NewSvc(times, args[0], method, payload, headers)
 		svc.Init()
 	},
 }
