@@ -3,6 +3,7 @@ package internal
 import (
 	"bytes"
 	"fmt"
+	"github.com/gammazero/workerpool"
 	"net/http"
 	"strings"
 	"sync"
@@ -43,6 +44,7 @@ func (s Svc) Init() {
 	}
 
 	wg.Wait()
+	wp.Stop()
 }
 
 func (s Svc) call(wg *sync.WaitGroup, i int) {

@@ -2,4 +2,8 @@ module github.com/jkonarze/concurl
 
 go 1.13
 
-require github.com/spf13/cobra v0.0.5
+require (
+	github.com/gammazero/workerpool v0.0.0-20200311205957-7b00833861c6
+	github.com/spf13/cobra v0.0.5
+	github.com/stretchr/testify v1.2.2
+)
