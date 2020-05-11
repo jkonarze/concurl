@@ -13,6 +13,7 @@ func TestNew(t *testing.T) {
 		givenConc int
 		givenPayload string
 		givenMethod string
+		givenHeaders []string
 
 		wantNil bool
 	}{
@@ -32,7 +33,7 @@ func TestNew(t *testing.T) {
 	for _, tt := range tests {
 		tc := tt
 		t.Run(tc.name, func(t *testing.T) {
-			svc := NewSvc(tc.givenUrl, tc.givenConc, tc.givenMethod, tc.givenPayload)
+			svc := NewSvc(tc.givenConc,tc.givenUrl, tc.givenMethod, tc.givenPayload, tc.givenHeaders)
 
 			required.NotNil(svc)
 			required.Equal( "", svc.payload)
