@@ -1,5 +1,4 @@
 # github.com/davecgh/go-spew v1.1.1
-## explicit
 github.com/davecgh/go-spew/spew
 # github.com/gammazero/deque v0.0.0-20200227231300-1e9af0e52b46
 github.com/gammazero/deque
@@ -9,14 +8,15 @@ github.com/gammazero/workerpool
 # github.com/inconshreveable/mousetrap v1.1.0
 github.com/inconshreveable/mousetrap
 # github.com/pmezard/go-difflib v1.0.0
-## explicit
 github.com/pmezard/go-difflib/difflib
 # github.com/spf13/cobra v1.7.0
 ## explicit
 github.com/spf13/cobra
 # github.com/spf13/pflag v1.0.5
 github.com/spf13/pflag
-# github.com/stretchr/testify v1.2.2
+# github.com/stretchr/testify v1.8.4
 ## explicit
 github.com/stretchr/testify/assert
 github.com/stretchr/testify/require
+# gopkg.in/yaml.v3 v3.0.1
+gopkg.in/yaml.v3
